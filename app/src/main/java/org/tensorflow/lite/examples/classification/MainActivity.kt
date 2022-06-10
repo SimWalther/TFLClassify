@@ -212,19 +212,7 @@ class MainActivity : AppCompatActivity() {
         // Initializing the flowerModel by lazy so that it runs in the same thread when the process
         // method is called.
         private val myModel: MyModel by lazy{
-
-            val compatList = CompatibilityList()
-
-            val options = if(compatList.isDelegateSupportedOnThisDevice) {
-                Log.d(TAG, "This device is GPU Compatible ")
-                Model.Options.Builder().setDevice(Model.Device.GPU).build()
-            } else {
-                Log.d(TAG, "This device is GPU Incompatible ")
-                Model.Options.Builder().setNumThreads(4).build()
-            }
-
-            // Initialize the Flower Model
-            MyModel.newInstance(ctx, options)
+            MyModel.newInstance(ctx, Model.Options.Builder().setNumThreads(4).build())
         }
 
         override fun analyze(imageProxy: ImageProxy) {

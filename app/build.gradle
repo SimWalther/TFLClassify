@@ -23,12 +23,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
 
     defaultConfig {
         applicationId "org.tensorflow.lite.examples.classification"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
@@ -56,6 +56,7 @@ android {
         dataBinding = true
         mlModelBinding true
     }
+    namespace 'org.tensorflow.lite.examples.classification'
 
 }
 
@@ -69,6 +70,7 @@ dependencies {
     implementation 'org.tensorflow:tensorflow-lite-support:0.1.0-rc1'
     implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0-rc1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
 
     // Import for CameraX
     def camerax_version = "1.0.0-beta10"

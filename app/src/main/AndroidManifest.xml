@@ -16,8 +16,7 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="org.tensorflow.lite.examples.classification">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Make sure the device has a camera. If you use android.hardware.camera without .any,
     it will not work if you have a device without a back camera, such as most Chromebooks. -->
@@ -34,7 +33,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TFLClassify"
         tools:ignore="AllowBackup">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
